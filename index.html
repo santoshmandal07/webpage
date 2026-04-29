@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML & CSS Projects - Complete Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-header {
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3em;
+            border-bottom: 4px solid;
+        }
+
+        .project-1 .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-bottom-color: #764ba2;
+        }
+
+        .project-2 .project-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-bottom-color: #2a5298;
+        }
+
+        .project-3 .project-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-bottom-color: #f5576c;
+        }
+
+        .project-4 .project-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-bottom-color: #34495e;
+        }
+
+        .project-5 .project-header {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            border-bottom-color: #229954;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .project-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .project-details h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9em;
+        }
+
+        .feature-list li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .btn-visit {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .project-1 .btn-visit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .project-2 .btn-visit {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .project-3 .btn-visit {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .project-4 .btn-visit {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+
+        .project-5 .btn-visit {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .btn-visit:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .note {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid white;
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 HTML & CSS Projects Collection</h1>
+            <p>Complete solutions for all 5 web development projects</p>
+        </header>
+
+        <div class="note">
+            <strong>📝 Note:</strong> All CSS files are saved as separate files or inline as requested. No JavaScript is used. All projects are fully functional and ready to view.
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card project-1">
+                <div class="project-header">📅 Project 1: Class Timetable</div>
+                <div class="project-content">
+                    <h3>Class Timetable</h3>
+                    <p>A professional class schedule with formatting using external CSS.</p>
+                    <div class="project-details">
+                        <h4>Features:</h4>
+                        <ul class="feature-list">
+                            <li>HTML table structure with proper hierarchy</li>
+                            <li>External CSS styling (style.css)</li>
+                            <li>Color-coded time slots and breaks</li>
+                            <li>Responsive table design</li>
+                            <li>Gradient backgrounds and hover effects</li>
+                        </ul>
+                    </div>
+                    <p><strong>CSS Type:</strong> External CSS</p>
+                    <a href="1_timetable/index.html" class="btn-visit">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card project-2">
+                <div class="project-header">🎓 Project 2: College Webpage</div>
+                <div class="project-content">
+                    <h3>College Webpage</h3>
+                    <p>Complete college portal with courses, departments, faculties, and library information.</p>
+                    <div class="project-details">
+                        <h4>Features:</h4>
+                        <ul class="feature-list">
+                            <li>Navigation with anchor links</li>
+                            <li>Course listings with subcategories</li>
+                            <li>Department descriptions</li>
+                            <li>Faculty directory with email links</li>
+                            <li>Library services and resources</li>
+                            <li>Sticky navigation bar</li>
+                        </ul>
+                    </div>
+                    <p><strong>CSS Type:</strong> External CSS</p>
+                    <a href="2_college_webpage/index.html" class="btn-visit">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card project-3">
+                <div class="project-header">🖼️ Project 3: Framed Website</div>
+                <div class="project-content">
+                    <h3>Multi-Frame Website</h3>
+                    <p>Professional website using HTML frames with header, navigation, content, and footer.</p>
+                    <div class="project-details">
+                        <h4>Features:</h4>
+                        <ul class="feature-list">
+                            <li>HTML frameset layout</li>
+                            <li>Header frame (top)</li>
+                            <li>Left navigation menu</li>
+                            <li>Right content frame</li>
+                            <li>Footer/Status bar frame</li>
+                            <li>Target linking between frames</li>
+                        </ul>
+                    </div>
+                    <p><strong>CSS Type:</strong> External CSS</p>
+                    <a href="3_framed_website/index.html" class="btn-visit">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card project-4">
+                <div class="project-header">👤 Project 4: Resume/CV</div>
+                <div class="project-content">
+                    <h3>Professional Resume</h3>
+                    <p>Complete resume/CV with professional formatting using inline CSS.</p>
+                    <div class="project-details">
+                        <h4>Features:</h4>
+                        <ul class="feature-list">
+                            <li>Inline CSS styling</li>
+                            <li>Professional layout and colors</li>
+                            <li>Multiple sections (education, experience)</li>
+                            <li>Skills and certifications</li>
+                            <li>Project portfolio</li>
+                            <li>Contact information with links</li>
+                        </ul>
+                    </div>
+                    <p><strong>CSS Type:</strong> Inline CSS</p>
+                    <a href="4_resume_cv/index.html" class="btn-visit">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card project-5">
+                <div class="project-header">🛒 Project 5: Supermarket Website</div>
+                <div class="project-content">
+                    <h3>Online Supermarket</h3>
+                    <p>E-commerce supermarket website with product listings and services.</p>
+                    <div class="project-details">
+                        <h4>Features:</h4>
+                        <ul class="feature-list">
+                            <li>Internal CSS styling</li>
+                            <li>Product grid display</li>
+                            <li>Department listings</li>
+                            <li>Service cards</li>
+                            <li>Pricing tables</li>
+                            <li>Customer testimonials</li>
+                        </ul>
+                    </div>
+                    <p><strong>CSS Type:</strong> Internal CSS</p>
+                    <a href="5_supermarket/index.html" class="btn-visit">View Project →</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>🎓 HTML & CSS Projects Collection</strong></p>
+            <p>Created: April 2026 | All projects use pure HTML & CSS (No JavaScript)</p>
+            <p>📁 Project Structure: Each project is organized in separate folders with appropriate file organization</p>
+            <p>&copy; 2026. All projects are for educational purposes.</p>
+        </footer>
+    </div>
+</body>
+</html>

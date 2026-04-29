@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Framed Website - Home</title>
+</head>
+<frameset rows="100,*,50">
+    <frame name="header" src="header.html" noresize>
+    <frameset cols="200,*">
+        <frame name="left" src="left.html" noresize>
+        <frame name="right" src="home.html">
+    </frameset>
+    <frame name="status" src="footer.html" noresize>
+</frameset>
+<noframes>
+    <body>
+        <p>This page uses frames, but your browser does not support them.</p>
+        <p><a href="home.html">Go to Home Page</a></p>
+    </body>
+</noframes>
+</html>
